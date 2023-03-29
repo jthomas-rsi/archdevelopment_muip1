@@ -2,6 +2,7 @@ import { createTheme } from '@mui/material/styles';
 
 const archBlue = '#0B72B9';
 const archOrange = '#FFBA60';
+const white = '#FFFFFF'
 
 
 const theme = createTheme({
@@ -16,7 +17,17 @@ const theme = createTheme({
         secondary:{
             main: `${archOrange}`
         },
-
+    },
+    typography:{
+        tab:{
+            fontFamily:'Raleway',
+            textTransform: 'none',
+            fontWeight: '700',
+            fontSize:'1rem',
+            marginLeft:'25px',
+            color:`${white}`,
+            minWidth:10
+        }
     }
 })
 
