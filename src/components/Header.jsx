@@ -1,5 +1,5 @@
 import { cloneElement } from "react";
-import { AppBar, Toolbar, useScrollTrigger, Tab,Tabs  } from "@mui/material";
+import { AppBar,Button, Toolbar, useScrollTrigger, Tab,Tabs  } from "@mui/material";
 
 import logo from '../assets/logo.svg'
 
@@ -37,6 +37,16 @@ const Header = (props) => {
                   />
               )) }
               </Tabs>
+              <Button variant="contained" color="secondary" 
+              sx={(theme)=>{
+                return{
+                  ...theme.typography.estimate
+                    }
+                  }
+                }
+              >
+                Free Estimate
+              </Button>
             </Toolbar>
           </AppBar>
         </ElevationScroll>
