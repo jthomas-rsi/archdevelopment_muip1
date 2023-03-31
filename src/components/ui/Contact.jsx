@@ -1,8 +1,9 @@
+import { Typography } from "@mui/material";
 const Contact =()=>{
     return (
-    <>
-    'Contact Page'
-    </>
+    <Typography>
+    Contact Page
+    </Typography>
     )
 }
 export default Contact;

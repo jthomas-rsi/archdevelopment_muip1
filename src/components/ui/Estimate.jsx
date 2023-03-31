@@ -1,8 +1,9 @@
+import { Typography } from "@mui/material";
 const Estimate =()=>{
     return (
-    <>
-    'Estimate Page'
-    </>
+    <Typography>
+    Estimate Page
+    </Typography>
     )
 }
 export default Estimate;

@@ -1,8 +1,10 @@
+import { Typography } from "@mui/material";
+
 const About =()=>{
     return (
-    <>
-    'About Page'
-    </>
+    <Typography>
+    About Page
+    </Typography>
     )
 }
 export default About;

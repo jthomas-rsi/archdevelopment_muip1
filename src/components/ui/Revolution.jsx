@@ -1,8 +1,9 @@
+import { Typography } from "@mui/material";
 const Revolution =()=>{
     return (
-    <>
-    'Revolution Page'
-    </>
+    <Typography>
+    Revolution Page
+    </Typography>
     )
 }
 export default Revolution;
