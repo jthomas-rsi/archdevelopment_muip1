@@ -1,10 +1,9 @@
 import {
   cloneElement,
   useEffect,
-  useMemo,
   useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { AppBar,Button, Toolbar, useScrollTrigger, Tab, Tabs,Box } from "@mui/material";
+import { AppBar,Button, Toolbar, useScrollTrigger, Tab, Tabs,Box, } from "@mui/material";
 
 import logo from '../assets/logo.svg'
 
@@ -23,6 +22,8 @@ const ElevationScroll = (props) => {
 
 const Header = (props) => {
   const [value, setValue] = useState(0);
+  
+  
   const location = useLocation();
   
     useEffect(()=>{ 
@@ -32,7 +33,7 @@ const Header = (props) => {
     else if(location.pathname === "/about"){setValue(3)}
     else if(location.pathname === "/contact"){setValue(4)}
     else if(location.pathname === "/estimate"){setValue(5)}
-  }, [value] )
+  }, [location.pathname] )
 
 
 
@@ -47,20 +48,34 @@ const Header = (props) => {
     {tabLabel:'The Revolution', url:'/revolution'},
     {tabLabel:'About Us', url:'/about'},
     {tabLabel:'Contact Us', url:'/contact'},
+    {tabLabel:'Free Estimate', url:'/estimate'},
   ]
     return(
         <ElevationScroll>
           <AppBar position="fixed" color="primary">
             <Toolbar disableGutters>
+            <Button
+            disableRipple={true}
+              component={Link}
+              to="/"
+              sx={()=>{
+                return{
+                  padding:'0px',
+                  "&:hover":{
+                    backgroundColor:'transparent'
+                  }
+                }}}
+            >
               <Box
                 component='img'
                 src={logo}
                 sx={()=>{
                   return{
-                    maxHeight: '7em'
+                    minHeight: '7em',
+                    padding:'0px'
                   }}}
                   />
-
+              </Button>
               <Tabs
               indicatorColor="secondary"
               value={value}
@@ -72,8 +87,22 @@ const Header = (props) => {
                 }
               }}
               >
-              { tabs.map((tab, idx)=>(
-                <Tab
+              { tabs.map((tab, idx)=> {
+                if(tab.url === '/estimate'){
+                return <Tab
+                  component={Link}
+                  to={tab.url}
+                  key={idx}
+                  value={idx}
+                  label={tab.tabLabel}
+                  sx={(theme)=>{
+                    return{
+                      ...theme.typography.estimate
+                    }}
+                  }
+                  />
+                }
+                return <Tab
                   component={Link}
                   to={tab.url}
                   key={idx}
@@ -85,22 +114,9 @@ const Header = (props) => {
                     }}
                   }
                   />
-              )) }
-              </Tabs>
-              <Button
-              variant="contained"
-              component={Link}
-              to='/estimate'
-              color="secondary" 
-              sx={(theme)=>{
-                return{
-                  ...theme.typography.estimate
-                    }
-                  }
                 }
-              >
-                Free Estimate
-              </Button>
+              ) }
+              </Tabs>
             </Toolbar>
           </AppBar>
         </ElevationScroll>

@@ -36,7 +36,8 @@ const theme = createTheme({
             fontSize:'1rem',
             textTransform: 'none',
             height: '45px',
-            color:'white'
+            color:'white',
+            backgroundColor: `${archOrange}`,
         }
     }
 })
