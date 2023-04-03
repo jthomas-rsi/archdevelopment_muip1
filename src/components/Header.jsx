@@ -1,9 +1,9 @@
 import {
   cloneElement,
-  // useEffect,
-  // useMemo,
+  useEffect,
+  useMemo,
   useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { AppBar,Button, Toolbar, useScrollTrigger, Tab, Tabs,Box } from "@mui/material";
 
 import logo from '../assets/logo.svg'
@@ -23,28 +23,23 @@ const ElevationScroll = (props) => {
 
 const Header = (props) => {
   const [value, setValue] = useState(0);
+  const location = useLocation();
+  
+    useEffect(()=>{ 
+    if(location.pathname === "/" ){ setValue(0)} 
+    else if(location.pathname === "/services"){setValue(1)}
+    else if(location.pathname === "/revolution" ){setValue(2)}
+    else if(location.pathname === "/about"){setValue(3)}
+    else if(location.pathname === "/contact"){setValue(4)}
+    else if(location.pathname === "/estimate"){setValue(5)}
+  }, [value] )
 
-  // useEffect(()=>{
-  //   if(window.location.pathname === "/" && value !== 0){
-  //     setValue(0)
-  //   } else if(window.location.pathname === "/services" && value !== 0){
-  //     setValue(1)
-  //   } else if(window.location.pathname === "/revolution" && value !== 0){
-  //     setValue(2)
-  //   } else if(window.location.pathname === "/about" && value !== 0){
-  //     setValue(3)
-  //   } else if(window.location.pathname === "/contact" && value !== 0){
-  //     setValue(4)
-  //   } else if(window.location.pathname === "/estimate" && value !== 0)
-  //   {setValue(5)
-  //   }
-  // },[value])
+
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
-  // const handlePage = useMemo(()=> handleChange(value), [value] )
 
   const tabs = [
     {tabLabel:'Home', url:'/'},
