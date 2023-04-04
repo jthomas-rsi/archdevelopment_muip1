@@ -8,6 +8,9 @@ import Revolution from "./ui/Revolution";
 import About from './ui/About';
 import Contact from './ui/Contact';
 import Estimate from './ui/Estimate';
+import Websites from "./ui/Websites";
+import Software from "./ui/CustomSoftware";
+import MobileApps from "./ui/MobileApps";
 import { Box } from "@mui/material";
 
 
@@ -30,6 +33,9 @@ function App() {
           <Route path="/about" element={<About/>} />
           <Route path="/contact" element={<Contact/>} />
           <Route path="/estimate" element={<Estimate/>} />
+          <Route path="/customsoftware" element={<Software/>} />
+          <Route path="/mobileapps" element={<MobileApps/>} />
+          <Route path="/websites" element={<Websites/>} />
         </Routes>
         </Box>
       </Router>
