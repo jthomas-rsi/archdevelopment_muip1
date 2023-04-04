@@ -11,6 +11,7 @@ import {
   Menu,
   MenuItem,
 } from "@mui/material";
+import ServiceMenu from "./ui/ServicesMenu";
 
 import logo from "../assets/logo.svg";
 
@@ -144,7 +145,6 @@ const Header = (props) => {
                         ...theme.typography.tab,
                       };
                     }}
-                    menulistprops={{ onMouseLeave: handleClose }}
                   />
                 );
               }
@@ -164,11 +164,18 @@ const Header = (props) => {
               );
             })}
           </Tabs>
-          <Menu
+          {/* <Menu
             id="simple-menu"
             anchorEl={anchorEl}
             open={open}
             onClose={handleClose}
+            sx={(theme) => {
+              return {
+                "& .MuiMenu-list": {
+                  backgroundColor: theme.palette.primary.main,
+                },
+              };
+            }}
           >
             <MenuItem
               onClick={() => {
@@ -210,7 +217,13 @@ const Header = (props) => {
             >
               Website Development
             </MenuItem>
-          </Menu>
+          </Menu> */}
+          <ServiceMenu
+            anchorEl={anchorEl}
+            open={open}
+            handleClose={handleClose}
+            setValue={setValue}
+          />
         </Toolbar>
       </AppBar>
     </ElevationScroll>
