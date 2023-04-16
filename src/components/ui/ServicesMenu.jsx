@@ -7,6 +7,9 @@ const ServiceMenu = ({ anchorEl, open, handleClose, setValue }) => {
     handleClose();
   };
 
+  useEffect(() => {
+    // close();
+  }, []);
   return (
     <Menu
       id="simple-menu"
@@ -22,7 +25,8 @@ const ServiceMenu = ({ anchorEl, open, handleClose, setValue }) => {
       }}
       MenuListProps={{
         sx: {
-          //   onmouseleave: () => close,
+          // TODO = fix the on mouse leave functionality of the service tab menu
+          // onmouseleave: () => close,
         },
       }}
     >
@@ -33,6 +37,11 @@ const ServiceMenu = ({ anchorEl, open, handleClose, setValue }) => {
         }}
         component={Link}
         to="/services"
+        sx={(theme) => {
+          return {
+            ...theme.typography.tab,
+          };
+        }}
       >
         Services
       </MenuItem>
@@ -43,6 +52,11 @@ const ServiceMenu = ({ anchorEl, open, handleClose, setValue }) => {
         }}
         component={Link}
         to="/customsoftware"
+        sx={(theme) => {
+          return {
+            ...theme.typography.tab,
+          };
+        }}
       >
         Custom Software Development
       </MenuItem>
@@ -53,6 +67,11 @@ const ServiceMenu = ({ anchorEl, open, handleClose, setValue }) => {
         }}
         component={Link}
         to="/mobileapps"
+        sx={(theme) => {
+          return {
+            ...theme.typography.tab,
+          };
+        }}
       >
         Mobile App Development
       </MenuItem>
@@ -63,6 +82,11 @@ const ServiceMenu = ({ anchorEl, open, handleClose, setValue }) => {
         }}
         component={Link}
         to="/websites"
+        sx={(theme) => {
+          return {
+            ...theme.typography.tab,
+          };
+        }}
       >
         Website Development
       </MenuItem>

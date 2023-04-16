@@ -8,8 +8,6 @@ import {
   Tab,
   Tabs,
   Box,
-  Menu,
-  MenuItem,
 } from "@mui/material";
 import ServiceMenu from "./ui/ServicesMenu";
 
@@ -164,60 +162,6 @@ const Header = (props) => {
               );
             })}
           </Tabs>
-          {/* <Menu
-            id="simple-menu"
-            anchorEl={anchorEl}
-            open={open}
-            onClose={handleClose}
-            sx={(theme) => {
-              return {
-                "& .MuiMenu-list": {
-                  backgroundColor: theme.palette.primary.main,
-                },
-              };
-            }}
-          >
-            <MenuItem
-              onClick={() => {
-                handleClose();
-                setValue(1);
-              }}
-              component={Link}
-              to="/services"
-            >
-              Services
-            </MenuItem>
-            <MenuItem
-              onClick={() => {
-                handleClose();
-                setValue(1);
-              }}
-              component={Link}
-              to="/customsoftware"
-            >
-              Custom Software Development
-            </MenuItem>
-            <MenuItem
-              onClick={() => {
-                handleClose();
-                setValue(1);
-              }}
-              component={Link}
-              to="/mobileapps"
-            >
-              Mobile App Development
-            </MenuItem>
-            <MenuItem
-              onClick={() => {
-                handleClose();
-                setValue(1);
-              }}
-              component={Link}
-              to="/websites"
-            >
-              Website Development
-            </MenuItem>
-          </Menu> */}
           <ServiceMenu
             anchorEl={anchorEl}
             open={open}
