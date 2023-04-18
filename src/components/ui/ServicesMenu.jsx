@@ -3,9 +3,9 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const ServiceMenu = ({ anchorEl, open, handleClose, setValue }) => {
-  const close = () => {
-    handleClose();
-  };
+  // const close = () => {
+  //   handleClose();
+  // };
 
   useEffect(() => {
     // close();
